@@ -8,7 +8,7 @@ public class VideoTexturePlayer : MonoBehaviour
 
     void Start()
     {
-        var movieTexture = _renderer.material.mainTexture as MovieTexture;
-        movieTexture.Play();        
+        //var movieTexture = _renderer.material.mainTexture as MovieTexture;
+        //movieTexture.Play();        
     }
 }

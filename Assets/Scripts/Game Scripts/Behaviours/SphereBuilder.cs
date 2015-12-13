@@ -7,18 +7,22 @@ public class SphereBuilder : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-	    BuildSphereMesh();
-	}
+        MeshFilter filter = gameObject.AddComponent<MeshFilter>();
+        var mesh = filter.mesh;
+        BuildSphereMesh(mesh);
+
+        filter.sharedMesh = mesh;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
 
-    private void BuildSphereMesh()
+    private void BuildSphereMesh(Mesh mesh)
     {
-        MeshFilter filter = gameObject.AddComponent<MeshFilter>();
-        Mesh mesh = filter.mesh;
+        
+        //Mesh mesh = filter.mesh;
         mesh.Clear();
 
         float radius = 1f;
@@ -114,7 +118,7 @@ public class SphereBuilder : MonoBehaviour {
         mesh.triangles = triangles;
         //
 
-        filter.sharedMesh = mesh;
+        //
 
 
         mesh.RecalculateBounds();
